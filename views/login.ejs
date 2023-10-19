@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="icon" type="image/png" href="/images/icon.png">
+    <style>
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            color: #fff;
+            text-transform: capitalize;
+        }
+        /* body
+        {
+            width: 100%;
+            height: 100vh;
+            
+        } */
+        /* form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            height: auto;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 50px;
+
+        } */
+
+        /* section {
+            
+            height: inherit;
+            background: linear-gradient(-30deg, #03a9f4 0%, #3a78b7 50%, #262626 50%, #607d8b 100%);
+
+
+        } */
+
+        .containers {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            margin-top: 10%;
+        }
+
+        .card {
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1),
+                inset 2px 2px rgba(255, 255, 255, 0.2),
+                5px 5px 15px rgba(0, 0, 0, 0.1),
+                10px 10px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: rgba(240, 248, 255, 0.667);
+        }
+
+        .content {
+            margin: 20px;
+            padding: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .card h1 {
+            color: #fff;
+
+            font-size: 2.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        form ion-icon {
+            font-size: 1.7em;
+            margin-right: 10px;
+            transition: 0.5s;
+        }
+
+        form input {
+            font-size: 1.1em;
+            background: transparent;
+            outline: none;
+            border: none;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 10px;
+        }
+
+        form button {
+            font-weight: 500;
+            font-size: 1.2em;
+            padding: 8px 20px;
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+        form input:focus{
+            background: #ffffff;
+            color: #333;
+        }
+        form button:hover {
+            background: #fff;
+            color: #333;
+        }
+
+
+
+        form label {
+            margin-left: 10px;
+        }
+
+        p {
+            opacity: 0;
+        }
+        .content.btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* button:focus {
+            background: #fff;
+            color: #333;s
+        } */
+        .content.btn button{
+            cursor: pointer;
+            transition: 0.5s;
+            border: none;
+            outline: none;
+        }
+        .content.btn button:hover{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+        <h1>
+            <%=mes%>
+        </h1>
+        <!-- <form method="POST" action="/login" autocomplete="off">
+        <input type="text" name="username" placeholder="Username" required autocomplete="off" id="searchInput">
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form> -->
+
+        <section>
+            <div class="containers">
+                <div class="card">
+                    <form method="POST" action="/login" autocomplete="off">
+                        <div class="content">
+                            <ion-icon name="person"></ion-icon>
+                            <input type="text" class="text" name="username" placeholder="Enter Name" required="required">
+                        </div>
+                        <div class="content">
+                            <ion-icon name="lock-closed"></ion-icon>
+                            <input type="password" name="password" placeholder="Enter Password" required="required" id="password"><br>
+                        </div>
+                        <div class="content">
+                            <input type="checkbox"><label for="">Remember me</label>
+                        </div>
+                        <div class="content btn">
+                            <button>Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </section>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <!-- <script>
+            const inputElement = document.getElementById('searchInput');
+
+            window.onload = function () {
+                inputElement.focus();
+            };
+        </script> -->
+</body>
+
+</html>

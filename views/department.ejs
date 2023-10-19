@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEPT</title>
+    <link rel="icon" type="image/png" href="/images/icon.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #01687b;
+            transition: 0.5s; */
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 45px;
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            /* overflow-x:scroll ; */
+            width: 100%;
+            height: 100%;
+            gap: 5px;
+            transition: 2s;
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: auto;
+            height: auto;
+            padding: 30px;
+            text-decoration: none;
+            color: #333;
+            background: rgb(193, 209, 225);
+            border-radius: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1),
+                5px 10px 15px rgba(0, 0, 0, 0.1),
+                10px 15px 205px rgba(0, 0, 0, 0.1),
+                15px 20px 25px rgba(0, 0, 0, 0.1),
+                20px 25px 30px rgba(0, 0, 0, 0.1),
+                25px 30px 25px rgba(0, 0, 0, 0.1),
+                inset 2px 2px rgba(255, 255, 255, 0.2),
+                inset -2px -2px rgba(0, 0, 0, 0.2);
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.5s;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: scale(1.2);
+        }
+
+        a.hover {
+            padding: 5px 10px;
+            background: #f2f7fb;
+            border-radius: 5px;
+            text-decoration: none;
+            color: rgb(43, 60, 85);
+            transition: 0.5s;
+        }
+
+        .back {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .hover:hover {
+            transform: scale(1.2);
+        }
+    </style>
+
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+        <h1>DEPARTMENTS</h1>
+        <div class="content">
+            <%title.forEach(function(item,i){%>
+                <a class="card" href="/dept/<%= item.Deptname%>">
+                    <%=item.Deptname%>
+                </a><br><br>
+
+                <% }) %>
+        </div>
+        <br><br>
+        <div class="back">
+            <a class="hover" href="/">click to go back</a>
+        </div>
+</body>
+
+</html>
