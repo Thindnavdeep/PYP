@@ -463,7 +463,7 @@
       var ejsVariable = "<%= search %>";
       // var ejsVariable = "searchmech";
       // console.log("<%= search %>");
-      fetch(`http://localhost:3000/${ejsVariable}`)
+      fetch(`https://pyp-pu.cyclic.app/${ejsVariable}`)
         .then((response) => {
           if (response.ok) {
             return response.json();
