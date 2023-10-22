@@ -79,6 +79,14 @@
             text-transform: capitalize;
             margin-top:50px ;
         }
+        .mst.no{
+            color: #ffffffc4;
+            font-size: 30px;
+            font-weight: 900;
+            text-transform: capitalize;
+            margin-top:50px ;
+            font-style: oblique;
+        }
     </style>
 </head>
 
@@ -86,9 +94,11 @@
     <%- include('partials/header') %>
         <h2 class="mst"><%=msts%></h2>
         <div class="content">
-            <%arr.forEach((item,i=1)=>{%>
+            <% if(len!=0) {arr.forEach((item,i=1)=>{%>
                 <a class="card" href="/docs/<%=sub%>/<%=msts%>/<%=item%>">PDF<%=i+1%></a><br><br>
-                <%})%>
+                <%})} else {%>
+                    <h2 class="mst no">No Paper Yet</h2>
+                    <%}%>
         </div>
         <br><br>
         <a class="back" href="/dept/<%= back%>">back to home</a>
