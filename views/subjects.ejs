@@ -130,11 +130,21 @@
         inset -2px -2px rgba(0, 0, 0, 0.2);
     }
 
+    .card .subject span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 250px;
+      height: auto;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
     .card .paper {
       width: 100%;
       height: auto;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
       /* background: #85e9ee; */
     }
@@ -262,6 +272,7 @@
       padding: 5px;
       font-size: 13px;
       font-weight: bolder;
+      max-width: 250px;
       cursor: pointer;
       transition: background-color 0.2s;
     }
@@ -332,13 +343,14 @@
     .back:hover {
       transform: scale(1.2);
     }
-    .backs
-    {
+
+    .backs {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
     }
+
     .back {
       padding: 5px 10px;
       background: #f2f7fb;
@@ -480,7 +492,10 @@
           done = () => {
             $("#searchInput").autocomplete({
               source: arr,
-              delay: 200, // Delay in milliseconds before making the request to the source
+              delay: 200,
+              max: 10,
+              minLength: 2,
+              // Delay in milliseconds before making the request to the source
               position: {
                 my: "left top", // Position of the dropdown relative to the input field
                 at: "left bottom",
