@@ -23,15 +23,14 @@ exports.CSE = (req, res) => {
     // insert();
     try {
         subject.find().then((result) => {
-            res.render("subjects", { data: result, dep: "CSE", search: "searchcse" ,link:"searchcs"});
+            res.render("subjects", { data: result, dep: "CSE", search: "searchcse", link: "searchcs" });
         }).catch((err) => {
             console.log(err);
         })
     } catch (error) {
         console.log(error)
-    } finally
-    {
-        
+    } finally {
+
     }
 }
 // exports.opt = (req, res) => {
@@ -40,7 +39,7 @@ exports.CSE = (req, res) => {
 
 // }
 exports.mst = (req, res) => {
-    const dir=path.join(__dirname,`../public/docs/${req.params['Operating_System']}/${req.params['mst1']}`)
+    const dir = path.join(__dirname, `../public/docs/${req.params['Operating_System']}/${req.params['mst1']}`)
     //  const dir = `D:/Database-project/Get_paper/Get_Papers/public/docs/Operating System/mst1`;
     console.log(dir)
     // console.log(req.params['mst1'])
@@ -48,11 +47,13 @@ exports.mst = (req, res) => {
     try {
         fs.readdir(dir, 'utf-8', (err, files) => {
             var arr = [];
-            files.forEach((item) => {
-                arr.push(item);
-            })
+            if (files.length != 0) {
+                files.forEach((item) => {
+                    arr.push(item);
+                })
+            }
             len = files.length;
-            res.render('mst', { leng: len, arr, msts: req.params['mst1'], sub: req.params['Operating_System'],back:"CSE" });
+            res.render('mst', { leng: len, arr, msts: req.params['mst1'], sub: req.params['Operating_System'], back: "CSE" });
         })
     } catch (error) {
         // console.log("Error occured", error);
@@ -69,7 +70,7 @@ exports.auto = (req, res) => {
             console.log(err);
         })
     } catch (error) {
-       console.log(error) 
+        console.log(error)
     }
 }
 /*
@@ -100,7 +101,7 @@ exports.search = async (req, res,next) => {
 
 
 
-exports.search = async (req, res,next) => {
+exports.search = async (req, res, next) => {
     const searchdata = await req.query.searchinput;
     try {
         const found = await subject.findOne({ Subjects: searchdata });
@@ -109,12 +110,12 @@ exports.search = async (req, res,next) => {
             const single = data.Subjects;
 
             // console.log(data);
-            res.render('subjects', { data: null, item: data, dep: "CSE", search: "searchcse" ,link:"searchcs"});
+            res.render('subjects', { data: null, item: data, dep: "CSE", search: "searchcse", link: "searchcs" });
         }
-        else{
-            res.render('subjects', { data: null, item: null, search: "searchcse", notfind:"Not Found" ,link:"searchcs"});
+        else {
+            res.render('subjects', { data: null, item: null, search: "searchcse", notfind: "Not Found", link: "searchcs" });
         }
-    
+
         // res.send(data);
 
     } catch (error) {
