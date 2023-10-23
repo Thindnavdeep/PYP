@@ -94,7 +94,7 @@
     <%- include('partials/header') %>
         <h2 class="mst"><%=msts%></h2>
         <div class="content">
-            <% if(len!=0) {arr.forEach((item,i=1)=>{%>
+            <% if(leng!=0) {arr.forEach((item,i=1)=>{%>
                 <a class="card" href="/docs/<%=sub%>/<%=msts%>/<%=item%>">PDF<%=i+1%></a><br><br>
                 <%})} else {%>
                     <h2 class="mst no">No Paper Yet</h2>
