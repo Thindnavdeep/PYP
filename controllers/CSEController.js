@@ -47,11 +47,10 @@ exports.mst = (req, res) => {
     try {
         fs.readdir(dir, 'utf-8', (err, files) => {
             var arr = [];
-            if (files.length != 0) {
+            
                 files.forEach((item) => {
                     arr.push(item);
                 })
-            }
             len = files.length;
             res.render('mst', { leng: len, arr, msts: req.params['mst1'], sub: req.params['Operating_System'], back: "CSE" });
         })
