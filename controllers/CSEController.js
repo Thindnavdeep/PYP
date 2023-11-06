@@ -51,6 +51,7 @@ exports.mst = (req, res) => {
                 files.forEach((item) => {
                     arr.push(item);
                 })
+
             len = files.length;
             res.render('mst', { leng: len, arr, msts: req.params['mst1'], sub: req.params['Operating_System'], back: "CSE" });
         })

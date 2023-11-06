@@ -1,4 +1,6 @@
-* {
+
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap');
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -31,15 +33,15 @@ header .logo {
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  font-family: consolas;
 }
 
 header .logo a {
   color: #333;
   text-decoration: none;
   padding: 5px;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 900;
+  font-family: "Playpen Sans";
 }
 
 header .logo svg {
