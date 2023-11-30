@@ -4,4 +4,4 @@ const url = process.env.url;
 mongoose.connect(url,{}).then(result=>console.log("Database connected successfully"))
 .catch(err => console.log(err));
 
-require('./department.model')
+require('./department.model');
